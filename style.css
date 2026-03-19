@@ -1,0 +1,201 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#1d4350,#a43931);
+overflow:hidden;
+}
+
+/* Floating shapes */
+
+.floating-shapes::before,
+.floating-shapes::after{
+
+content:"";
+position:absolute;
+width:300px;
+height:300px;
+background:rgba(255,255,255,0.1);
+border-radius:50%;
+animation:float 10s infinite linear;
+
+}
+
+.floating-shapes::after{
+
+top:60%;
+left:70%;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0)}
+50%{transform:translateY(-40px)}
+100%{transform:translateY(0)}
+
+}
+
+/* Container */
+
+.main-container{
+
+width:900px;
+height:520px;
+background:white;
+display:flex;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,0.3);
+
+}
+
+/* Left */
+
+.left-panel{
+
+width:50%;
+background:linear-gradient(135deg,#2c3e50,#3498db);
+color:white;
+padding:60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+}
+
+/* Animated title */
+
+.title{
+
+font-size:38px;
+font-weight:600;
+animation:textGlow 2s infinite alternate;
+
+}
+
+@keyframes textGlow{
+
+from{ text-shadow:0 0 5px #fff }
+to{ text-shadow:0 0 20px #00e5ff }
+
+}
+
+.description{
+
+margin-top:15px;
+line-height:1.6;
+animation:fadeIn 2s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{opacity:0; transform:translateY(20px)}
+to{opacity:1; transform:translateY(0)}
+
+}
+
+/* Right */
+
+.right-panel{
+
+width:50%;
+padding:50px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+}
+
+/* Tabs */
+
+.tabs{
+
+display:flex;
+margin-bottom:20px;
+
+}
+
+.tabs button{
+
+flex:1;
+padding:12px;
+border:none;
+background:#ecf0f1;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+
+}
+
+.tabs button.active{
+
+background:#3498db;
+color:white;
+
+}
+
+/* Forms */
+
+form{
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+input{
+
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+transition:0.3s;
+
+}
+
+input:focus{
+
+border-color:#3498db;
+box-shadow:0 0 10px rgba(52,152,219,0.5);
+
+}
+
+/* Animated button */
+
+.btn{
+
+padding:12px;
+border:none;
+background:#3498db;
+color:white;
+border-radius:8px;
+cursor:pointer;
+font-size:15px;
+transition:0.3s;
+
+}
+
+.btn:hover{
+
+background:#1f6db2;
+transform:scale(1.05);
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+
+}
+
+#registerForm{
+
+display:none;
+
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Complaint</title>
+<link rel="stylesheet" href="complaint.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Left Section -->
+    <div class="left">
+        <h1>Submit Complaint</h1>
+        <p>
+            Report issues like road damage, garbage problems, water issues, 
+            and help improve your city.
+        </p>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right">
+        <h2>Complaint Form</h2>
+
+        <form id="complaintForm">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <select required>
+                <option value="">Select Category</option>
+                <option>Road Damage</option>
+                <option>Garbage Issue</option>
+                <option>Street Light</option>
+                <option>Water Problem</option>
+            </select>
+
+            <textarea placeholder="Describe your complaint..." required></textarea>
+
+            <button type="submit">Submit Complaint</button>
+
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
