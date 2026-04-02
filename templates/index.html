@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Public Complaint System</title>
-<link rel="stylesheet" href="landing.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -20,7 +20,7 @@
         </p>
 
         <div class="buttons">
-            <a href="login.html" class="btn primary">Get Started</a>
+            <a href="{{ url_for('login') }}" class="btn primary">Get Started</a>
             <a href="#services" class="btn secondary">Our Services</a>
         </div>
     </div>
@@ -29,7 +29,7 @@
         <div class="card">
             <h3>Quick Access</h3>
             <p>Login or Register to raise complaints instantly.</p>
-            <a href="login.html" class="btn small">Login Now</a>
+            <a href="{{ url_for('login') }}" class="btn small">Login Now</a>
         </div>
     </div>
 </section>

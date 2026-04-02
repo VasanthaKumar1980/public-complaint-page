@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Public Complaint System</title>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="floating-shapes"></div>
+
+<div class="main-container">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+
+        <h1 class="title">Public Complaint System</h1>
+
+        <p class="description">
+        Report civic problems like road damage, street lights,
+        garbage issues and help improve your city.
+        </p>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+
+        <!-- SIMPLE LOGIN TITLE -->
+        <h2 style="text-align:center; margin-bottom:20px;">Login</h2>
+
+        <!-- LOGIN FORM -->
+        <form id="loginForm" method="POST" action="/login">
+    <input type="email" name="login_email" id="loginEmail" placeholder="Enter Email" required>
+    <input type="password" name="login_password" id="loginPassword" placeholder="Enter Password" required>
+    <button type="submit" class="btn">Login</button>
+</form>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

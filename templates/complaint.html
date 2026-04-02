@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Submit Complaint</title>
-<link rel="stylesheet" href="complaint.css">
+<link rel="stylesheet" href="{{ url_for('static', filename ='css/complaint.css')}}">
 </head>
 
 <body>
@@ -24,13 +24,13 @@
     <div class="right">
         <h2>Complaint Form</h2>
 
-        <form id="complaintForm">
+        <form id="complaintForm" method="POST">
 
-            <input type="text" placeholder="Your Name" required>
+            <input type="text" name="complaint_name" placeholder="Your Name" required>
 
-            <input type="email" placeholder="Your Email" required>
+            <input type="email" name="complaint_email" placeholder="Your Email" required>
 
-            <select required>
+            <select name="complaint_category" required>
                 <option value="">Select Category</option>
                 <option>Road Damage</option>
                 <option>Garbage Issue</option>
@@ -38,7 +38,7 @@
                 <option>Water Problem</option>
             </select>
 
-            <textarea placeholder="Describe your complaint..." required></textarea>
+            <textarea name="complaint_description" placeholder="Describe your complaint..." required></textarea>
 
             <button type="submit">Submit Complaint</button>
 
@@ -46,6 +46,10 @@
     </div>
 
 </div>
-
+<br><br>
+<br><br>
+<div style="text-align: center;" id="pending">
+<a href="{{ url_for('pendings') }}">View Pending Complaints</a>
+</div>
 </body>
 </html>
