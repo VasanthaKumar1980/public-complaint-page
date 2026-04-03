@@ -61,5 +61,19 @@ def pendings():
     pending_details =Complaint.query.all()
     return render_template('pendings.html', pending_details = pending_details)
 
+
+@app.route('/edit/<int:id>', methods=['POST','GET'])
+def edit(id):
+    edit = Complaint.query.get(id)
+
+    if request.method == 'POST':
+        edit.complaint = request.form['complaint_name']
+        edit.email = request.form['complaint_email']
+        db.session.commit()
+        return redirect(url_for('pendings'))
+
+    return render_template('edit.html', edit=edit)
+
+
 if __name__ == '__main__':
      app.run(debug=True)
