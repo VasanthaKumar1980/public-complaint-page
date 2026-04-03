@@ -25,8 +25,12 @@
                 <td>{{ d.complaint }}</td>
                 <td>{{ d.email }}</td>
                 <td>{{ d.category }}</td>
-                <td><button class="btn btn-warning">Update</button></td>
-                <td><button class="btn btn-danger">Edit</button></td>
+                <td>
+                    <a href="{{ url_for('edit', id=d.id) }}">
+                        <button class="btn btn-warning">Edit</button>
+                    </a>
+                </td>
+                <td><button class="btn btn-danger">Delete</button></td>
              </tr>
             {% endfor %}
          </tbody>
