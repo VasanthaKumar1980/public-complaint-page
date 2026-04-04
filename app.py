@@ -59,11 +59,12 @@ def complaint():
 def pendings():
 
     pending_details =Complaint.query.all()
-    return render_template('pendings.html', pending_details = pending_details)
+    return render_template('pendings.html', pending_details=pending_details)
 
 
-@app.route('/edit/<int:id>', methods=['POST','GET'])
+@app.route('/edit/update/<int:id>', methods=['POST','GET'])
 def edit(id):
+    
     edit = Complaint.query.get(id)
 
     if request.method == 'POST':
@@ -73,6 +74,16 @@ def edit(id):
         return redirect(url_for('pendings'))
 
     return render_template('edit.html', edit=edit)
+
+
+@app.route('/delete/<int:id>')
+def delete(id):
+
+    delete = Complaint.query.get(id)
+    db.session.delete(delete)
+    db.session.commit()
+
+    return redirect(url_for('pendings'))
 
 
 if __name__ == '__main__':

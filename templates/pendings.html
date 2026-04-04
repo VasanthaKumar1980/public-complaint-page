@@ -30,7 +30,9 @@
                         <button class="btn btn-warning">Edit</button>
                     </a>
                 </td>
-                <td><button class="btn btn-danger">Delete</button></td>
+                <td><a href="{{ url_for('delete', id=d.id) }}">
+                    <button class="btn btn-danger">Delete</button>
+                </a></td>
              </tr>
             {% endfor %}
          </tbody>
