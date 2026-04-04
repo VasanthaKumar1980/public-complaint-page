@@ -43,12 +43,12 @@ def complaint():
      if request.method == 'POST':
 
         complaint = request.form['complaint_name']
-        email = request.form['complaint_email']
+        place = request.form['complaint_place']
         category = request.form['complaint_category']
         description = request.form['complaint_description']
 
 
-        complaint_1 = Complaint( complaint = complaint ,email=email,category=category,description=description)
+        complaint_1 = Complaint( complaint = complaint ,place=place,category=category,description=description)
         db.session.add(complaint_1)
         db.session.commit()
  
@@ -69,7 +69,7 @@ def edit(id):
 
     if request.method == 'POST':
         edit.complaint = request.form['complaint_name']
-        edit.email = request.form['complaint_email']
+        edit.place = request.form['complaint_place']
         db.session.commit()
         return redirect(url_for('pendings'))
 

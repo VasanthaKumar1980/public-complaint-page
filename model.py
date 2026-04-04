@@ -11,6 +11,6 @@ class Login(db.Model):
 class Complaint(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     complaint = db.Column(db.String(100))
-    email = db.Column(db.String(100))
+    place = db.Column(db.String(100))
     category = db.Column(db.String(100))
     description = db.Column(db.Text)
